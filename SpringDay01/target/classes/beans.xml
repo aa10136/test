@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userDao" class="com.itd.dao.impl.UserDaoImpl">
+        <property name="strList">
+            <list>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </list>
+        </property>
+        <property name="userMap">
+            <map>
+                <entry key="u1" value-ref="user1"></entry>
+                <entry key="u2" value-ref="user2"></entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="p1">ppp1</prop>
+                <prop key="p2">ppp2</prop>
+                <prop key="p3">ppp3</prop>
+                <prop key="p4">ppp4</prop>
+            </props>
+        </property>
+
+    </bean>
+    <bean id="user1" class="com.itd.domain.User">
+        <property name="name" value="tom"/>
+        <property name="addr" value="beijing"/>
+    </bean>
+    <bean id="user2" class="com.itd.domain.User">
+        <property name="name" value="jierui"/>
+        <property name="addr" value="nanjing"/>
+    </bean>
+
+</beans>
